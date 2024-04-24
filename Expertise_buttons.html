@@ -6,8 +6,10 @@
 <style>
         button{
             background-color: #1E303B;
+            border: none;
             border-radius: 4px;
             border-width: 0;
+            box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
             color: #D4D4D4;
             cursor: pointer;
             display: block;
@@ -17,10 +19,11 @@
             line-height: 10px;
             list-style: none;
             margin: 2px 2px 1px 2px;
+            outline: none;
             padding: 10px 12px 10px 12px;
             text-align: center;
+            text-decoration: none;
             transition: all 200ms;
-            vertical-align: baseline;
             white-space: nowrap;
             user-select: none;
             -webkit-font-smoothing: antialiased;
@@ -32,6 +35,16 @@
             background-color: #263C4A;
             color: white;
             }
+
+        button:active { 
+            transform: scale(0.98); 
+            /* Scaling button to 0.98 to its original size */ 
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+            /* Lowering the shadow */ 
+
+
+
+
     </style>
 </head>
 <body>
@@ -40,10 +53,9 @@
         <a href="https://flo.uri.sh/story/2347176/embed#slide-1" target="Storyembed" style="text-decoration:none;"><button>Top 30 Hard Skills - color-coded by Phases 1 through 5</button></a>
         <a href="https://flo.uri.sh/story/2347176/embed#slide-2" target="Storyembed" style="text-decoration:none;"><button>Top 30 Hard Skills - Streamgraph</button></a>
         <a href="https://flo.uri.sh/story/2347176/embed#slide-3" target="Storyembed" style="text-decoration:none;"><button>Top 30 Hard Skills - Streamgraph - color-coded by Phases 1 through 5</button></a>
-        <iframe name="Storyembed" class="iframe trend" src='https://flo.uri.sh/story/2347176/embed#slide-0' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:850px;' sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
     </div>
     
-    
+    <iframe name="Storyembed" class="iframe trend" src='https://flo.uri.sh/story/2347176/embed#slide-0' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:850px;' sandbox='allow-same-origin allow-forms allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
 
 </body>
 
