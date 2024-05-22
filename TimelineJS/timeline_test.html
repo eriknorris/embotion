@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link title="timeline-styles" rel="stylesheet" href="https://github.com/eriknorris/embotion/blob/b118e180bdef1908263e8e04c45a7bda7b68c970/TimelineJS_1.css">
-  </head>
-  <body>
-	<script src="https://github.com/eriknorris/embotion/blob/f561996dc286e67812d42d9d606555b05e890692/TimelineJS/timeline.js"></script>
+    <title>timeline_test</title>
+    <meta charset="utf-8">
+    <meta name="description" content="TimelineJS Embed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.knightlab.com/libs/orangeline/latest/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://cdn.knightlab.com/libs/orangeline/latest/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://cdn.knightlab.com/libs/orangeline/latest/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://cdn.knightlab.com/libs/orangeline/latest/assets/favicons/manifest.json">
+    <link rel="mask-icon" href="https://cdn.knightlab.com/libs/orangeline/latest/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    
 
-	  <div id='timeline-embed' style="width: 100%; height: 650px"></div>
+<script id='timeline-script-tag' type="text/javascript" src="https://github.com/eriknorris/embotion/blob/f561996dc286e67812d42d9d606555b05e890692/TimelineJS/timeline.js"></script>
+    <link rel="stylesheet" href="https://github.com/eriknorris/embotion/blob/b118e180bdef1908263e8e04c45a7bda7b68c970/TimelineJS_1.css">
+    <!-- Google Analytics should be handled by Timeline -->
+
+    <base target="_blank">
+
+    <!-- Style-->
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        #timeline-embed {
+            height: 100%;
+        }
+    </style>
+</head>
+
+	
+  <body>
+	
+
+	  <div id='timeline-embed' style="width: 100%; height: 650px">
 
 	        <script type="text/javascript">
             // The TL.Timeline constructor takes at least two arguments:
@@ -23,5 +54,7 @@
             timeline = new TL.Timeline('timeline-embed',
             'https://docs.google.com/spreadsheets/d/1ZD_qhopkB3KSeCTfHtgP6r8gf4fGpX4Dv7Ge6DtQKmw/edit#gid=0');
         </script>  
+
+		  </div>
   </body>
 </html>
