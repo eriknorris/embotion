@@ -2531,6 +2531,7 @@
      border: 1px solid #cccccc;
      border-radius: 8px;
 }
+/*
  .tl-timeline .tl-attribution {
      cursor: pointer;
      z-index: 9;
@@ -2565,6 +2566,7 @@
      -ms-transform: rotate(45deg);
      -webkit-transform: rotate(45deg);
 }
+/*
 /* Portrait ================================================== */
  .tl-layout-portrait .tl-storyslider {
      -webkit-box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.2);
