@@ -16,7 +16,7 @@
     /* VCard ================================================== */
 }
  .tl-timeline h1, .tl-timeline h2, .tl-timeline h3, .tl-timeline h4, .tl-timeline h5, .tl-timeline h6 {
-     color: #F5F5F5;
+     color: #C027F5;
 }
  .tl-timeline h1, .tl-timeline h2, .tl-timeline h3 {
      font-size: 28px;
@@ -2514,7 +2514,7 @@
      -ms-user-select: none;
      -o-user-select: none;
      user-select: none;
-     background-color: #FFF;
+     background-color: #191919;
      color: #737373;
      -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
