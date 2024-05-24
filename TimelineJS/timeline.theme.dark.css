@@ -2888,6 +2888,7 @@
   border: 1px solid #000000;
   border-radius: 8px;
 }
+/*
 .tl-timeline .tl-attribution {
   cursor: pointer;
   z-index: 9;
@@ -2913,7 +2914,7 @@
   background-color: #c34528;
 }
 .tl-timeline .tl-attribution .tl-knightlab-logo {
-  display: none;
+  display: inline;
   vertical-align: middle;
   height: 8px;
   width: 8px;
@@ -2924,6 +2925,7 @@
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+/*
 /* Portrait
 ================================================== */
 .tl-layout-portrait .tl-storyslider {
