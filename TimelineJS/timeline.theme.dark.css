@@ -340,8 +340,8 @@
 ================================================== */
 @font-face {
   font-family: 'tl-icons';
-  src: url('./icons/tl-icons.eot');
-  src: url('./icons/tl-icons.eot?#iefix') format('embedded-opentype'), url('./icons/tl-icons.ttf') format('truetype'), url('./icons/tl-icons.woff2') format('woff2'), url('./icons/tl-icons.woff') format('woff'), url('./icons/tl-icons.svg#tl-icons') format('svg');
+  src: url('https://github.com/eriknorris/embotion/tree/b5d06dabcf31e9ddd6b5d9f83096edf98100915f/TimelineJS/icons/tl-icons.eot');
+  src: url('https://github.com/eriknorris/embotion/tree/b5d06dabcf31e9ddd6b5d9f83096edf98100915f/TimelineJS/icons/tl-icons.eot?#iefix') format('embedded-opentype'), url('https://github.com/eriknorris/embotion/tree/b5d06dabcf31e9ddd6b5d9f83096edf98100915f/TimelineJS/icons/tl-icons.ttf') format('truetype'), url('https://github.com/eriknorris/embotion/tree/b5d06dabcf31e9ddd6b5d9f83096edf98100915f/TimelineJS/icons/tl-icons.woff2') format('woff2'), url('https://github.com/eriknorris/embotion/tree/b5d06dabcf31e9ddd6b5d9f83096edf98100915f/TimelineJS/icons/tl-icons.woff') format('woff'), url('https://github.com/eriknorris/embotion/tree/b5d06dabcf31e9ddd6b5d9f83096edf98100915f/TimelineJS/icons/tl-icons.svg#tl-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
