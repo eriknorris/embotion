@@ -1907,9 +1907,9 @@
 .tl-slide.tl-text-background .tl-text .tl-text-content-container {
   padding: 20px;
   /* Fallback for web browsers that doesn't support RGBa */
-  background: #191919 transparent;
+  background: #000000 transparent;
   /* RGBa with 0.6 opacity */
-  background: rgba(19, 19, 19, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
@@ -2074,7 +2074,7 @@
 .tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-description,
 .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-description {
   text-shadow: 1px 1px 1px #333;
-  color: #CCC;
+  color: #F5F5F5;
 }
 .tl-slidenav-previous .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-icon,
 .tl-slidenav-next .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-icon,
