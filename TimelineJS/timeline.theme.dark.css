@@ -1907,9 +1907,9 @@
 .tl-slide.tl-text-background .tl-text .tl-text-content-container {
   padding: 20px;
   /* Fallback for web browsers that doesn't support RGBa */
-  background: #000000 transparent;
+  background: #191919 transparent;
   /* RGBa with 0.6 opacity */
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(19, 19, 19, 0.6);
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
