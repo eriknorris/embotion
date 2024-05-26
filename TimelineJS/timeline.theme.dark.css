@@ -557,8 +557,7 @@
   position: absolute;
   z-index: 11;
   text-align: center;
-/*  color: #333;  */
-  color: #4F4F4F;
+  color: #4A4A4A; 
   overflow: hidden;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
