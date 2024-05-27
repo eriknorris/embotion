@@ -807,7 +807,7 @@
   background-color: #191919;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid #404040;
+/*  border-top: 1px solid #404040; */
 }
 .tl-timenav .tl-timenav-line {
   position: absolute;
