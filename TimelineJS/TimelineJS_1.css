@@ -54,7 +54,7 @@
      margin-bottom: 10px;
      font-size: 15px;
      line-height: 1.42857143;
-     color: #666666;
+     color: #C027F5;
 }
  .tl-timeline p.lead {
      font-size: 24px;
@@ -75,7 +75,7 @@
          text-decoration: none;
     }
      */
-     color: #F53B27;
+     color: #C027F5;
      text-decoration: underline;
 }
  .tl-timeline p a:hover, .tl-timeline p a:focus {
@@ -100,7 +100,7 @@
 }
  .tl-timeline a {
      text-decoration: none;
-     color: #c34528;
+     color: #C027F5;
 }
  .tl-timeline a:hover {
      text-decoration: underline;
@@ -234,7 +234,7 @@
 }
  .tl-timeline .tl-button-calltoaction .tl-button-calltoaction-text {
      display: inline-block;
-     background-color: #c34528;
+     background-color: #C027F5;
      color: #fff;
      padding: 10px 15px 10px 15px;
      border-radius: 7px;
@@ -243,7 +243,7 @@
      display: block;
      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
      font-style: italic;
-     background-color: #fcf8e3;
+     background-color: #C027F5;
      font-size: 15px;
      line-height: 17px;
      padding: 10px;
@@ -557,7 +557,7 @@
      border: none;
      font-size: 18px;
      line-height: 18px;
-     background-color: rgba(242, 242, 242, 0.9);
+     background-color: rgba(19, 19, 19, 0.9);
      cursor: pointer;
      padding: 5px 10px 5px 10px;
      display: inline-block;
