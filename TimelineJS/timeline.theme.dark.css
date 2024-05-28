@@ -423,9 +423,11 @@
 }
 .tl-icon-zoom-in:after {
   content: "\e631";
+  color: rgba(250, 235, 204, 0.8);
 }
 .tl-icon-zoom-out:after {
   content: "\e632";
+  color: rgba(250, 235, 204, 0.8);
 }
 .tl-icon-list:after {
   content: "\e633";
@@ -468,9 +470,11 @@
 }
 .tl-icon-goback:after {
   content: "\e63e";
+  color: rgba(250, 235, 204, 0.8);
 }
 .tl-icon-goend:after {
   content: "\e969";
+  color: rgba(250, 235, 204, 0.8);
 }
 .tl-icon-prev2:after {
   content: "\ea23";
