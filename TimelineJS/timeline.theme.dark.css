@@ -634,7 +634,7 @@
   border: none;
   font-size: 18px;
   line-height: 18px;
-  background-color: rgba(110, 110, 110, 0.9);
+ /* background-color: rgba(110, 110, 110, 0.9);  */
   cursor: pointer;
   padding: 5px 10px 5px 10px;
   display: inline-block;
@@ -831,7 +831,7 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: ##C027F5;
+  color: #C027F5;
   font-size: 32px;
   line-height: 32px;
   position: absolute;
