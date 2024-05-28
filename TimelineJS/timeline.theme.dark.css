@@ -1260,7 +1260,7 @@
   background-color: #CCC;
 }
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
-  background-color: #333;
+  background-color: #262626;
   color: #CCC;
   z-index: 9;
   border-color: rgba(204, 204, 204, 0.5);
