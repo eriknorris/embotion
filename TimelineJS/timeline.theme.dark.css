@@ -634,7 +634,7 @@
   border: none;
   font-size: 18px;
   line-height: 18px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(25, 25, 25);
   cursor: pointer;
   padding: 5px 10px 5px 10px;
   display: inline-block;
