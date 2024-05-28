@@ -638,12 +638,12 @@
   border: none;
   font-size: 18px;
   line-height: 18px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
   padding: 5px 10px 5px 10px;
   display: inline-block;
   display: block;
-  color: #FAEBCC;
+  color: #CCC;
 }
 .tl-menubar-button:disabled {
   opacity: 0.33;
@@ -651,7 +651,7 @@
 }
 .tl-menubar-button:hover,
 .tl-menubar-button:focus-visible {
-  background: #CCC;
+  background: rgba(0, 0, 0, 0.3);
   color: #333;
 }
 .tl-menubar-button:hover:disabled,
@@ -2077,7 +2077,7 @@
 .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-title,
 .tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-description,
 .tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-description {
-  text-shadow: 1px 1px 1px #333;
+/*  text-shadow: 1px 1px 1px #333;  */
   color: #CCC;
 }
 .tl-slidenav-previous .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-icon,
@@ -2087,7 +2087,7 @@
 .tl-slidenav-previous .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-description,
 .tl-slidenav-next .tl-slidenav-content-container.tl-slidenav-inverted .tl-slidenav-description {
   color: #bfbfbf;
-  text-shadow: 1px 1px 1px #CCC;
+/*  text-shadow: 1px 1px 1px #CCC;  */
 }
 /* ICONS
 ================================================== */
