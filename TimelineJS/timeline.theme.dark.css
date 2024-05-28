@@ -551,9 +551,9 @@
   -o-user-select: none;
   user-select: none;
 }
-/* MenuBar 
+/*  
 ================================================== */
-.tl-menubar {
+.tl- {
   position: absolute;
   z-index: 11;
   text-align: center;
@@ -628,13 +628,13 @@
     background: #FFF;
   }
 }
-/* MenuBar Button
+/*  Button
 ================================================== */
 .tl-menubar-button {
   border: none;
   font-size: 18px;
   line-height: 18px;
- /* background-color: rgba(110, 110, 110, 0.9);  */
+  background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
   padding: 5px 10px 5px 10px;
   display: inline-block;
