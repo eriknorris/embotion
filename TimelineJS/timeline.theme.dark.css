@@ -991,7 +991,7 @@
 }
 .tl-timemarker .tl-timemarker-line-left,
 .tl-timemarker .tl-timemarker-line-right {
-  margin-top: 7px;
+  margin-top: 0px;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;
@@ -1008,7 +1008,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  box-shadow: 1px 1px 1px #333;
+  box-shadow: 1px 1px 1px #FFF;
 }
 .tl-timemarker .tl-timemarker-line-left:after,
 .tl-timemarker .tl-timemarker-line-right:after {
