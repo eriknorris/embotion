@@ -893,6 +893,7 @@
 /* TL.TimeMarker
 ================================================== */
 .tl-timemarker {
+  align-content: center;
   height: 100%;
   position: absolute;
   top: 0;
