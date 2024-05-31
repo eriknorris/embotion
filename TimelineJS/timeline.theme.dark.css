@@ -1052,6 +1052,7 @@
   z-index: 9;
 }
 .tl-timemarker .tl-timemarker-content-container .tl-timemarker-content {
+  align-content: center;
   position: relative;
   overflow: hidden;
   height: 100%;
