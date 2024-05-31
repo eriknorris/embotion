@@ -1260,8 +1260,6 @@
   background-color: #CCC;
 }
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container {
-  position: relative;
-  top: -6px;
   background-color: #262626;
   color: #CCC;
   z-index: 9;
@@ -1289,8 +1287,6 @@
 }
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container .tl-timemarker-content .tl-timemarker-media-container .tl-timemarker-media {
   opacity: 1;
-  position: relative;
-  top: -6px;
 }
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container .tl-timemarker-content .tl-timemarker-media-container [class^="tl-icon-"],
 .tl-timemarker.tl-timemarker-active .tl-timemarker-content-container .tl-timemarker-content .tl-timemarker-media-container [class*=" tl-icon-"] {
