@@ -1053,7 +1053,6 @@
   z-index: 9;
 }
 .tl-timemarker .tl-timemarker-content-container .tl-timemarker-content {
-  align-content: center;
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -1112,6 +1111,7 @@
   /* IE6-9 */
 }
 .tl-timemarker .tl-timemarker-content-container .tl-timemarker-content .tl-timemarker-media-container {
+  align-content: center;
   float: left;
   max-width: 24px;
   max-height: 24px;
