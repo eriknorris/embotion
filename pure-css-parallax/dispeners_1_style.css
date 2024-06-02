@@ -96,7 +96,7 @@ img:last-of-type {
 }
 
 #title {
-  background-image: url("https://drive.google.com/file/d/1tUaL69KSIGEZP1ou2moc6pGpSTiw5FRQ/view?usp=sharing");
+  background-image: url("https://github.com/eriknorris/assets/blob/b2f663991cb7d874683bfb7ef069cc6c32a8d400/hyphen/dispensers/IMG_0246_high.gif");
   z-index: 2;
 }
 
@@ -106,17 +106,17 @@ img:last-of-type {
 }
 
 #slide1:before {
-  background-image: url("https://drive.google.com/file/d/1L2XYFkam2zL6OlUw016bxVBYyeWt58ub/view?usp=sharing");
+  background-image: url("https://github.com/eriknorris/assets/blob/b2f663991cb7d874683bfb7ef069cc6c32a8d400/hyphen/dispensers/PXL_20220708_233116557.png");
   transform: translateZ(-1px) scale(2);
 }
 
 #slide2 {
-  background-image: url("https://drive.google.com/file/d/1Ry_lhmSx3_wwR4C-ulDZutFUjSfFBuuT/view?usp=sharing");
+  background-image: url("https://github.com/eriknorris/assets/blob/b2f663991cb7d874683bfb7ef069cc6c32a8d400/hyphen/dispensers/PXL_20220708_233159814.png");
   z-index: 2;
 }
 
 #slide3:before {
-  background-image: url("https://drive.google.com/file/d/1rDdazpgduFHJGOAAM0tFQlBKFITgATr6/view?usp=sharing");
+  background-image: url("https://github.com/eriknorris/assets/blob/b2f663991cb7d874683bfb7ef069cc6c32a8d400/hyphen/dispensers/PXL_20220712_003552292.png");
   transform: translateZ(-1px) scale(2);
 }
 
