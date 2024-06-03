@@ -112,7 +112,7 @@ img:last-of-type {
 
 #slide2 {
   background-image: url("./dispensers_assets/PXL_20220708_233143748_60.png");
-  z-index: 2;
+  transform: translateZ(-1px) scale(2);
 }
 
 #slide3:before {
@@ -122,7 +122,7 @@ img:last-of-type {
 
 #slide4 {
   background-image: url("./dispensers_assets/PXL_20220712_015735568_med.gif");
-  z-index: 2;
+  transform: translateZ(-1px) scale(2);
 }
 
 #slide5:before {
