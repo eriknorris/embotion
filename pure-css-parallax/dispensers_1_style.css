@@ -115,7 +115,7 @@ img:last-of-type {
   z-index: 2;
 }
 
-#slide3:before {
+#slide3 {
   background-image: url("./dispensers_1_assets/PXL_20220708_233159814.png");
   transform: translateZ(-1px) scale(2);
 }
@@ -125,7 +125,7 @@ img:last-of-type {
   transform: translateZ(-1px) scale(2);
 }
 
-#slide5:before {
+#slide5 {
   background-image: url("./dispensers_1_assets/PXL_20220712_015852716_high.gif");
   transform: translateZ(-1px) scale(2);
 }
@@ -135,7 +135,7 @@ img:last-of-type {
   transform: translateZ(-1px) scale(2);
 }
 
-#slide7:before {
+#slide7 {
   background-image: url("./dispensers_1_assets/PXL_20220712_004200705.png");
   transform: translateZ(-1px) scale(2);
 }
@@ -145,7 +145,7 @@ img:last-of-type {
   transform: translateZ(-1px) scale(2);
 }
 
-#slide9:before {
+#slide9 {
   background-image: url("./dispensers_1_assets/PXL_20220712_015735568_high.gif");
   transform: translateZ(-1px) scale(2);
 }
@@ -155,6 +155,6 @@ img:last-of-type {
   transform: translateZ(-1px) scale(2);
 }
 
-#slide11:before {
+#slide11 {
   background: #222;
 }
