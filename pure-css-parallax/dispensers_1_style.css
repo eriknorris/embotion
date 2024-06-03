@@ -110,7 +110,7 @@ img:last-of-type {
   transform: translateZ(-1px) scale(2);
 }
 
-#slide2 {
+#slide2:before {
   background-image: url("./dispensers_1_assets/PXL_20220708_233143748.png");
   z-index: 2;
 }
