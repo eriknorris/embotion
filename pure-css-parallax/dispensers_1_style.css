@@ -83,10 +83,12 @@ img:last-of-type {
   margin-right: 0;
 }
 
+/*
 .slide,
 .slide:before {
   background: 50% 50% / cover;
 }
+*/
 
 .header {
   text-align: center;
