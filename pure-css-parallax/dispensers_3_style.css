@@ -32,7 +32,7 @@ p {
   min-height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.7);
+  /* box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.7); */
   transform-style: inherit;
 }
 
@@ -47,7 +47,7 @@ img {
   padding: 10px;
   border-radius: 5px;
   background: rgba(240, 230, 220, 0.7);
-  box-shadow: 0 10 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
 img:last-of-type {
@@ -62,7 +62,7 @@ img:last-of-type {
   bottom: 0;
   left: 0;
   right: 0;
-/*  box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.7); */
+  box-shadow: 0 10 20px 1px rgba(0, 0, 0, 0.7);
 }
 
 .title {
