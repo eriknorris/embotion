@@ -24,3 +24,7 @@ h1 {
   font-size: 3em;
   font-weight: 400;
 }
+
+#slide1 {
+  background-image: url("./dispensers_assets/IMG_0246_med.gif");
+}
