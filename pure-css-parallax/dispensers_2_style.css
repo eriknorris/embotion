@@ -96,7 +96,7 @@ img:last-of-type {
 }
 
 #title {
-  background-image: url("./dispensers_assets/IMG_0246_high.gif");
+  background-image: url("./dispensers_assets/IMG_0246_med.gif");
   z-index: 2;
 }
 
@@ -106,12 +106,12 @@ img:last-of-type {
 }
 
 #slide1:before {
-  background-image: url("./dispensers_assets/PXL_20220708_233116557.png");
+  background-image: url("./dispensers_assets/PXL_20220708_233116557_60.png");
   transform: translateZ(-1px) scale(2);
 }
 
 #slide2 {
-  background-image: url("./dispensers_assets/PXL_20220708_233143748.png");
+  background-image: url("./dispensers_assets/PXL_20220708_233143748_60.png");
   z-index: 2;
 }
 
