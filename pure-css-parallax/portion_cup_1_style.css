@@ -96,7 +96,7 @@ img:last-of-type {
 }
 
 #title {
-  background-image: url("../assets/backsplash/IMG_0237_med.gif");
+  background-image: url("../assets/portion_cup/Screenshot_2021-06-07_203019.png");
   z-index: 2;
 }
 
@@ -106,7 +106,7 @@ img:last-of-type {
 }
 
 #slide1:before {
-  background-image: url("../assets/backsplash/PXL_20211102_180108511_60.png");
+  background-image: url("../assets/portion_cup/PXL_20210604_183228768_60.png");
   transform: translateZ(-1px) scale(2);
 }
 
