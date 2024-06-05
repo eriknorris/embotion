@@ -125,7 +125,7 @@ img:last-of-type {
   z-index: 2;
 }
 
-#slide5:before {
+/* #slide5:before {
   background-image: url("https://picsum.photos/2419/1814");
   transform: translateZ(-1px) scale(2);
 }
@@ -153,7 +153,7 @@ img:last-of-type {
 #slide10 {
   background-image: url("https://picsum.photos/2419/1814");
   z-index: 2;
-}
+} */
 
 #slide11 {
   background: #191919;
