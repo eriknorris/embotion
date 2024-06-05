@@ -96,7 +96,7 @@ img:last-of-type {
 }
 
 #title {
-  background-image: url("./dispensers_assets/IMG_0246_med.gif");
+  background-image: url("../assets/dispensers/IMG_0246_med.gif");
   z-index: 2;
 }
 
@@ -106,52 +106,52 @@ img:last-of-type {
 }
 
 #slide1:before {
-  background-image: url("./dispensers_assets/PXL_20220708_233116557_60.png");
+  background-image: url("../assets/dispensers/PXL_20220708_233116557_60.png");
   z-index: 1;
 }
 
 #slide2 {
-  background-image: url("./dispensers_assets/PXL_20220708_233143748_60.png");
+  background-image: url("../assets/dispensers/PXL_20220708_233143748_60.png");
   z-index: 2;
 }
 
 #slide3:before {
-  background-image: url("./dispensers_assets/PXL_20220708_233159814_60.png");
+  background-image: url("../assets/dispensers/PXL_20220708_233159814_60.png");
   z-index: 3;
 }
 
 #slide4 {
-  background-image: url("./dispensers_assets/PXL_20220712_015735568_med.gif");
+  background-image: url("../assets/dispensers/PXL_20220712_015735568_med.gif");
   z-index: 4;
 }
 
 #slide5:before {
-  background-image: url("./dispensers_assets/PXL_20220712_015852716_med.gif");
+  background-image: url("../assets/dispensers/PXL_20220712_015852716_med.gif");
   z-index: 5;
 }
 
 #slide6 {
-  background-image: url("./dispensers_assets/PXL_20220712_003552292_60.png");
+  background-image: url("../assets/dispensers/PXL_20220712_003552292_60.png");
   z-index: 6;
 }
 
 #slide7:before {
-  background-image: url("./dispensers_assets/PXL_20220712_004200705_60.png");
+  background-image: url("../assets/dispensers/PXL_20220712_004200705_60.png");
   z-index: 7;
 }
 
 #slide8 {
-  background-image: url("./dispensers_assets/PXL_20220712_015852716_med.gif");
+  background-image: url("../assets/dispensers/PXL_20220712_015852716_med.gif");
   z-index: 8;
 }
 
 #slide9:before {
-  background-image: url("./dispensers_assets/PXL_20220712_015735568_med.gif");
+  background-image: url("../assets/dispensers/PXL_20220712_015735568_med.gif");
   z-index: 10;
 }
 
 #slide10 {
-  background-image: url("./dispensers_assets/PXL_20220712_015814789_med.gif");
+  background-image: url("../assets/dispensers/PXL_20220712_015814789_med.gif");
   z-index: 11;
 }
 
