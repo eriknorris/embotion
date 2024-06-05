@@ -70,7 +70,7 @@ img:last-of-type {
 }
 
 #img_r:last-of-type {
-  transform: translateZ(0.4px) scale(0.6) translateX(-104%) translateY(-40%)
+  transform: translateZ(0.4px) scale(0.6) translateX(104%) translateY(40%)
     rotate(5deg);
 }
 
