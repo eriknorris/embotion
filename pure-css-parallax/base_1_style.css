@@ -136,7 +136,7 @@ img:last-of-type {
 
 #slide1:before {
   background-image: url("../assets/base/click_testing_1.gif");
-  z-index: 1;
+  transform: translateZ(-1px) scale(2);
 }
 
 #slide2 {
@@ -146,30 +146,30 @@ img:last-of-type {
 
 #slide3:before {
   background-image: url("../assets/base/test_btn_1.gif");
-  z-index: 3;
+  transform: translateZ(-1px) scale(2);
 }
 
 #slide4 {
   background-image: url("../assets/base/cycle_testing.gif");
-  z-index: 4;
+  z-index: 2;
 }
 
 #slide5:before {
   background-image: url("../assets/base/pull_testing_1.gif");
-  z-index: 5;
+  transform: translateZ(-1px) scale(2);
 }
 
 #slide6 {
   background-image: url("../assets/base/side-pull-testing.gif");
-  z-index: 6;
+  z-index: 2;
 }
 
 #slide7:before {
   background-image: url("../assets/base/impact_testing_1.gif");
-  z-index: 7;
+  transform: translateZ(-1px) scale(2);
 }
 
-#slide8 {
+/* #slide8 {
   background-image: url("../assets/dispensers/PXL_20220712_015852716_med.gif");
   z-index: 2;
 }
@@ -182,7 +182,7 @@ img:last-of-type {
 #slide10 {
   background-image: url("../assets/dispensers/PXL_20220712_015814789_med.gif");
   z-index: 2;
-}
+} */
 
 #slide11 {
   background: #191919;
