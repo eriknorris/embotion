@@ -169,7 +169,7 @@ img:last-of-type {
   z-index: 7;
 }
 
-/* #slide8 {
+#slide8 {
   background-image: url("../assets/dispensers/PXL_20220712_015852716_med.gif");
   z-index: 2;
 }
@@ -182,7 +182,7 @@ img:last-of-type {
 #slide10 {
   background-image: url("../assets/dispensers/PXL_20220712_015814789_med.gif");
   z-index: 2;
-} */
+}
 
 #slide11 {
   background: #191919;
