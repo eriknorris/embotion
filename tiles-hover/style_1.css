@@ -1,3 +1,5 @@
+
+
 .masonry-list {
   left: 50%;
   margin: -320px 0 0 -480px;
@@ -175,7 +177,7 @@
   position: static;
 }
 .masonry-list li.tile-person p {
-  color: ##191919;
+  color: #191919;
   font-family: 'Georgia', serif;
   font-size: 17px;
   margin: .2em;
@@ -200,10 +202,11 @@
   top: 0;
 }
 .masonry-list .tile-primary-content {
-  background-color: #a49058;
+  background-color: #191919;
 }
 .masonry-list .tile-primary-content img {
-  width: 100%;
+  /*width: 100%;*/
+  object-fit: cover;
   -moz-transform: scale3d(1, 1, 1);
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
