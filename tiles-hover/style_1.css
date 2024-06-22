@@ -42,14 +42,15 @@
 }
 .masonry-list li a::after {
   background-image: url("https://eriknorris.github.io/embotion/assets/dispensers/PXL_20220708_233116557_60.png");
+  object-fit: fill;
   /*bottom: 40px; */
   content: '';
   display: block;
-  height: 17px;
+  /*height: 17px;*/
   opacity: 0;
   position: absolute;
-  right: 40px;
-  width: 17px;
+  /*right: 40px;
+  width: 17px;*/
   -moz-transform: translate3d(-10px, -10px, 0);
   -webkit-transform: translate3d(-10px, -10px, 0);
   transform: translate3d(-10px, -10px, 0);
