@@ -183,7 +183,7 @@
   position: static;
 }
 .masonry-list li.tile-person p {
-  /*color: #191919;*/
+  color: white;
   font-family: 'Georgia', serif;
   font-size: 17px;
   margin: .2em;
@@ -208,12 +208,12 @@
   top: 0;
 }
 .masonry-list .tile-primary-content {
-  /*background-color: #191919;*/
-  background-color: transparent;
+  background-color: #191919;
+  /*background-color: transparent;*/
 }
 .masonry-list .tile-primary-content img {
-  /*width: 100%;*/
-  object-fit: cover;
+  width: 100%;
+  /*object-fit: cover;*/
   -moz-transform: scale3d(1, 1, 1);
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
@@ -267,8 +267,8 @@
 }
 
 body {
-  background-color: #242424;
-  /*background-color: transparent;*/
+  /*background-color: #242424;*/
+  background-color: transparent;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
