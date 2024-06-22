@@ -8,8 +8,7 @@
 .masonry-list li {
   float: left;
   height: 320px;
-  overflow: clip;
-  overflow-clip-margin: border-box;
+  overflow: hidden;
   padding: 0 1px 1px 0;
   width: 320px;
 }
@@ -194,8 +193,7 @@
 .masonry-list .tile-secondary-content {
   bottom: 0;
   left: 0;
-  overflow: clip;
-  overflow-clip-margin: border-box;
+  overflow: hidden;
   padding: 40px;
   position: absolute;
   right: 0;
@@ -206,6 +204,8 @@
 }
 .masonry-list .tile-primary-content img {
   width: 100%;
+  overflow: clip;
+  overflow-clip-margin: border-box;
   -moz-transform: scale3d(1, 1, 1);
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
@@ -249,9 +249,9 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 * {
