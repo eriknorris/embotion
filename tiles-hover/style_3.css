@@ -8,7 +8,8 @@
 .masonry-list li {
   float: left;
   height: 320px;
-  overflow: hidden;
+  overflow: clip;
+  overflow-clip-margin: border-box;
   padding: 0 1px 1px 0;
   width: 320px;
 }
@@ -193,7 +194,8 @@
 .masonry-list .tile-secondary-content {
   bottom: 0;
   left: 0;
-  overflow: hidden;
+  overflow: clip;
+  overflow-clip-margin: border-box;
   padding: 40px;
   position: absolute;
   right: 0;
