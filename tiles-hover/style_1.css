@@ -41,8 +41,8 @@
   opacity: 1;
 }
 .masonry-list li a::after {
-  /*background-image: url("https://eriknorris.github.io/embotion/assets/dispensers/PXL_20220708_233116557_60.png");
-  object-fit: fill;*/
+  background-image: url("https://eriknorris.github.io/embotion/assets/dispensers/PXL_20220708_233116557_60.png");
+  object-fit: fill;
   /*bottom: 40px; */
   content: '';
   display: block;
@@ -267,8 +267,8 @@
 }
 
 body {
-  /*background-color: #242424;*/
-  background-color: transparent;
+  background-color: #242424;
+  /*background-color: transparent;*/
   font-family: 'Source Sans Pro', sans-serif;
 }
 
