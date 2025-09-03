@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Project Timeline</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #4a4a4a;
+        }
+        #chart-container {
+            width: 100%;
+            max-width: 1200px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        .bar {
+            cursor: pointer;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .bar:hover {
+            opacity: 0.7;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 0.9rem;
+        }
+        .tooltip-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .grid .tick line {
+            stroke: #e0e0e0;
+            stroke-dasharray: 2,2;
+        }
+        .axis-label {
+            font-size: 0.8rem;
+            fill: #666;
+        }
+        .domain {
+            stroke: #666;
+        }
+         @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            #chart-container {
+                padding: 1rem;
+            }
+             .axis-label {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+</head>
+<body>
+    <h1>Interactive Project Timeline</h1>
+    <div id="chart-container"></div>
+
+    <script>
+        const data = [
+            { "Name": "Freelance", "Employer": "Mechanistic", "Title": "Senior Mechanical Design Engineer", "StartDate": "2022-09-01", "EndDate": "2024-03-09" },
+            { "Name": "Makeline", "Employer": "Hyphen", "Title": "Staff Mechanical Engineer", "StartDate": "2021-05-01", "EndDate": "2022-08-24" },
+            { "Name": "Dispensers", "Employer": "Hyphen", "Title": "Staff Mechanical Engineer", "StartDate": "2021-12-01", "EndDate": "2022-08-24" },
+            { "Name": "Backsplash", "Employer": "Hyphen", "Title": "Staff Mechanical Engineer", "StartDate": "2021-07-01", "EndDate": "2021-12-31" },
+            { "Name": "Portion Cup", "Employer": "Hyphen", "Title": "Staff Mechanical Engineer", "StartDate": "2021-05-01", "EndDate": "2021-08-15" },
+            { "Name": "Pet Scale", "Employer": "Mechanistic", "Title": "Senior Mechanical Engineer", "StartDate": "2019-02-01", "EndDate": "2019-03-15" },
+            { "Name": "electronic battery lock", "Employer": "Mechanistic", "Title": "Senior Mechanical Engineer", "StartDate": "2019-01-01", "EndDate": "2019-04-15" },
+            { "Name": "IOT module", "Employer": "Mechanistic", "Title": "Senior Mechanical Engineer", "StartDate": "2018-11-01", "EndDate": "2019-02-01" },
+            { "Name": "bay wheels", "Employer": "Mechanistic", "Title": "Senior Mechanical Engineer", "StartDate": "2018-11-01", "EndDate": "2019-05-01" },
+            { "Name": "On/Off Switches", "Employer": "Noon", "Title": "Senior Mechanical Engineer", "StartDate": "2017-07-01", "EndDate": "2018-03-01" },
+            { "Name": "Extension Switches", "Employer": "Noon", "Title": "Senior Mechanical Engineer", "StartDate": "2017-03-01", "EndDate": "2018-02-01" },
+            { "Name": "Room Director", "Employer": "Noon", "Title": "Senior Mechanical Engineer", "StartDate": "2017-08-01", "EndDate": "2018-01-01" },
+            { "Name": "Wall Plates", "Employer": "Noon", "Title": "Senior Mechanical Engineer", "StartDate": "2017-03-01", "EndDate": "2018-02-01" },
+            { "Name": "Base", "Employer": "Noon", "Title": "Senior Mechanical Engineer", "StartDate": "2017-03-17", "EndDate": "2018-05-01" },
+            { "Name": "Glyph 2", "Employer": "Avegant", "Title": "Senior Mechanical Engineer", "StartDate": "2015-10-17", "EndDate": "2017-03-01" },
+            { "Name": "Glyph", "Employer": "Avegant", "Title": "Senior Mechanical Engineer", "StartDate": "2015-06-01", "EndDate": "2017-03-01" },
+            { "Name": "BFD", "Employer": "Mechanistic", "Title": "Senior Mechanical Engineer", "StartDate": "2016-12-01", "EndDate": "2024-03-14" },
+            { "Name": "Strato", "Employer": "Kaleidescape", "Title": "Senior Mechanical Engineer", "StartDate": "2014-06-01", "EndDate": "2015-02-01" },
+            { "Name": "Cinema One", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2012-08-01", "EndDate": "2013-09-01" },
+            { "Name": "KVAULT-M700 Disc Vault", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2010-08-01", "EndDate": "2011-07-01" },
+            { "Name": "KVAULT-DV700 Disc Vault", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2010-08-02", "EndDate": "2011-07-02" },
+            { "Name": "Disc Cartridges", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2010-06-01", "EndDate": "2010-12-01" },
+            { "Name": "K-Remote", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2009-04-20", "EndDate": "2009-08-01" },
+            { "Name": "Weemote", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2010-06-01", "EndDate": "2010-08-01" },
+            { "Name": "KPLAYER-M500 Player", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2010-04-01", "EndDate": "2010-07-01" },
+            { "Name": "KPLAYER-M300 Movie Player", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2010-03-01", "EndDate": "2010-05-01" },
+            { "Name": "KSERVER-1550 1U+ Server", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2010-03-02", "EndDate": "2010-05-02" },
+            { "Name": "KVAULT-10 Modular Disc Vault", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2010-09-01", "EndDate": "2011-06-01" },
+            { "Name": "Jewel", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2009-06-01", "EndDate": "2010-04-01" },
+            { "Name": "KSYSTEM-120 Mini System", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2009-01-01", "EndDate": "2009-06-01" },
+            { "Name": "KSERVER-5000 3U Server", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2008-06-01", "EndDate": "2009-03-01" },
+            { "Name": "Speed Reader", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2008-05-01", "EndDate": "2009-02-01" },
+            { "Name": "KSERVER-1500 1U Server", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2008-05-01", "EndDate": "2008-08-01" },
+            { "Name": "KPLAYER-300 Mini Player", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2008-03-01", "EndDate": "2009-01-01" },
+            { "Name": "KPLAYER-6000 1080p Player", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2008-03-02", "EndDate": "2009-01-02" },
+            { "Name": "KPLAYER-5000 Movie Player 2", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2008-03-01", "EndDate": "2008-12-01" },
+            { "Name": "KPLAYER-2500 1U Player", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2008-03-02", "EndDate": "2008-12-02" },
+            { "Name": "KSERVER-2500 5U Server", "Employer": "Kaleidescape", "Title": "Senior Mechanical Design Engineer", "StartDate": "2008-03-03", "EndDate": "2008-12-03" },
+            { "Name": "Mbox 2 Micro", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2007-10-01", "EndDate": "2008-04-01" },
+            { "Name": "003 Rack", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2007-05-01", "EndDate": "2007-10-01" },
+            { "Name": "Mbox 2 Mini", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2007-02-01", "EndDate": "2007-05-01" },
+            { "Name": "Mbox 2 Pro", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2006-06-01", "EndDate": "2006-11-01" },
+            { "Name": "003", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2006-06-01", "EndDate": "2007-02-01" },
+            { "Name": "Control | 24", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2006-08-01", "EndDate": "2007-07-01" },
+            { "Name": "Mbox 2", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2005-09-01", "EndDate": "2005-11-01" },
+            { "Name": "Profile", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2005-02-01", "EndDate": "2005-07-01" },
+            { "Name": "D-Show", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2005-02-01", "EndDate": "2005-07-01" },
+            { "Name": "D-Control", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2004-08-01", "EndDate": "2005-03-01" },
+            { "Name": "D-Command", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2004-04-01", "EndDate": "2004-09-01" },
+            { "Name": "Pro Control Jr.", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2003-06-01", "EndDate": "2004-04-01" },
+            { "Name": "002 Rack", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2003-05-01", "EndDate": "2003-10-01" },
+            { "Name": "Mbox", "Employer": "Digidesign", "Title": "Senior Mechanical Designer", "StartDate": "2003-03-01", "EndDate": "2003-10-01" },
+            { "Name": "Xbox", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2002-09-01", "EndDate": "2002-12-01" },
+            { "Name": "Receiver 5", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2002-06-01", "EndDate": "2002-08-01" },
+            { "Name": "Receiver 4", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2002-01-01", "EndDate": "2002-05-01" },
+            { "Name": "Receiver 3", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2001-10-01", "EndDate": "2001-12-01" },
+            { "Name": "Receiver 2", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2001-09-01", "EndDate": "2001-11-01" },
+            { "Name": "Mercury LC", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2001-07-01", "EndDate": "2002-01-01" },
+            { "Name": "usb box", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2001-06-01", "EndDate": "2001-08-01" },
+            { "Name": "Remotes", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2001-05-01", "EndDate": "2001-08-01" },
+            { "Name": "Receiver 1", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2001-04-01", "EndDate": "2001-11-01" },
+            { "Name": "Node", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2000-12-01", "EndDate": "2001-01-01" },
+            { "Name": "Media Nodes", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2000-11-01", "EndDate": "2001-04-01" },
+            { "Name": "MP6000 MP3 Player", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2000-07-01", "EndDate": "2000-11-01" },
+            { "Name": "Keyboard", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2000-05-01", "EndDate": "2000-07-01" },
+            { "Name": "LapTV", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2000-04-01", "EndDate": "2000-06-01" },
+            { "Name": "Remote", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2000-04-01", "EndDate": "2000-05-01" },
+            { "Name": "Netscreen-500", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "2000-02-01", "EndDate": "2000-04-01" },
+            { "Name": "320 / 540", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "1998-08-01", "EndDate": "1998-09-01" },
+            { "Name": "HP Jornada", "Employer": "Mechanistic", "Title": "Senior Mechanical Designer", "StartDate": "1998-06-01", "EndDate": "1998-07-01" },
+            { "Name": "DVDO Player", "Employer": "frogdesign", "Title": "Mechanical Designer", "StartDate": "1998-03-01", "EndDate": "1998-05-01" },
+            { "Name": "Vadem Clio", "Employer": "frogdesign", "Title": "Mechanical Designer", "StartDate": "1997-10-01", "EndDate": "1997-11-01" },
+            { "Name": "KaVo Dental Unit 2", "Employer": "frogdesign", "Title": "Mechanical Designer", "StartDate": "1997-07-01", "EndDate": "1997-12-01" },
+            { "Name": "Acer Phone", "Employer": "frogdesign", "Title": "Mechanical Designer", "StartDate": "1997-07-01", "EndDate": "1997-08-01" },
+            { "Name": "KaVo Dental Unit 1", "Employer": "Mechanistic", "Title": "Mechanical Designer", "StartDate": "1997-07-01", "EndDate": "1997-10-01" },
+            { "Name": "Acer subwoofer", "Employer": "Mechanistic", "Title": "Mechanical Designer", "StartDate": "1997-06-01", "EndDate": "1997-08-01" },
+            { "Name": "Newscorp set-top box", "Employer": "Mechanistic", "Title": "Mechanical Designer", "StartDate": "1997-02-01", "EndDate": "1997-10-01" },
+            { "Name": "Packard Bell Convertible", "Employer": "Mechanistic", "Title": "Mechanical Designer", "StartDate": "1996-02-01", "EndDate": "1996-03-01" },
+            { "Name": "Acer Aspire", "Employer": "Mechanistic", "Title": "Mechanical Designer", "StartDate": "1996-02-01", "EndDate": "1996-05-01" },
+            { "Name": "Fissler BBQ", "Employer": "Mechanistic", "Title": "Mechanical Designer", "StartDate": "1995-05-01", "EndDate": "1996-01-01" },
+            { "Name": "Sunbeam window toaster", "Employer": "Mechanistic", "Title": "Mechanical Designer", "StartDate": "1995-01-01", "EndDate": "1995-03-01" },
+            { "Name": "Frantic Frames", "Employer": "Mechanistic", "Title": "Mechanical Designer", "StartDate": "1992-04-01", "EndDate": "1993-03-01" },
+            { "Name": "Indigo II", "Employer": "Silicon Graphics", "Title": "Technician IV", "StartDate": "1991-01-01", "EndDate": "1991-11-01" },
+            { "Name": "Indigo", "Employer": "Silicon Graphics", "Title": "Technician IV", "StartDate": "1990-10-01", "EndDate": "1991-01-01" },
+            { "Name": "Iris File", "Employer": "Silicon Graphics", "Title": "Technician IV", "StartDate": "1990-02-01", "EndDate": "1990-10-01" },
+            { "Name": "Indy", "Employer": "Silicon Graphics", "Title": "Technician IV", "StartDate": "1991-09-01", "EndDate": "1992-03-01" },
+            { "Name": "Personal Iris", "Employer": "Silicon Graphics", "Title": "Technician IV", "StartDate": "1989-09-01", "EndDate": "1990-03-01" },
+            { "Name": "EPT-1000 Cardiac Ablation System", "Employer": "EP Technologies", "Title": "Production Supervisor", "StartDate": "1987-01-01", "EndDate": "1989-06-01" }
+        ];
+
+        const parseDate = d3.timeParse("%Y-%m-%d");
+
+        data.forEach(d => {
+            d.startDate = parseDate(d.StartDate);
+            d.endDate = parseDate(d.EndDate);
+        });
+
+        data.sort((a, b) => a.startDate - b.startDate);
+
+        const container = d3.select("#chart-container");
+        const margin = { top: 30, right: 30, bottom: 40, left: 150 };
+
+        function drawChart() {
+            container.html(''); // Clear previous chart
+            
+            const containerWidth = container.node().getBoundingClientRect().width;
+            const width = containerWidth - margin.left - margin.right;
+            const height = data.length * 30;
+
+            const svg = container.append("svg")
+                .attr("width", containerWidth)
+                .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            const x = d3.scaleTime()
+                .domain([d3.min(data, d => d.startDate), d3.max(data, d => d.endDate)])
+                .range([0, width]);
+
+            const y = d3.scaleBand()
+                .domain(data.map(d => d.Name))
+                .range([0, height])
+                .padding(0.3);
+
+            const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+            // X-axis
+            const xAxis = d3.axisBottom(x).ticks(d3.timeYear.every(2)).tickFormat(d3.timeFormat("%Y"));
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(xAxis)
+                .selectAll("text")
+                .style("text-anchor", "middle");
+
+            // Y-axis
+            const yAxis = d3.axisLeft(y).tickSize(0);
+            svg.append("g")
+                .call(yAxis)
+                .selectAll(".tick text")
+                .call(wrap, margin.left - 10);
+
+            // Gridlines
+            svg.append("g")
+                .attr("class", "grid")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x)
+                    .ticks(d3.timeYear.every(1))
+                    .tickSize(-height)
+                    .tickFormat("")
+                );
+
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip");
+
+            // Bars
+            svg.selectAll(".bar")
+                .data(data)
+                .enter().append("rect")
+                .attr("class", "bar")
+                .attr("x", d => x(d.startDate))
+                .attr("y", d => y(d.Name))
+                .attr("width", d => x(d.endDate) - x(d.startDate))
+                .attr("height", y.bandwidth())
+                .attr("fill", d => color(d.Employer))
+                .on("mouseover", (event, d) => {
+                    tooltip.transition().duration(200).style("opacity", .9);
+                    tooltip.html(`
+                        <div class="tooltip-title">${d.Name}</div>
+                        <strong>Employer:</strong> ${d.Employer}<br>
+                        <strong>Title:</strong> ${d.Title}<br>
+                        <strong>Duration:</strong> ${d3.timeFormat("%b %d, %Y")(d.startDate)} - ${d3.timeFormat("%b %d, %Y")(d.endDate)}
+                    `)
+                    .style("left", (event.pageX + 15) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+                })
+                .on("mouseout", () => {
+                    tooltip.transition().duration(500).style("opacity", 0);
+                });
+        }
+        
+        // Wrap Y-axis labels
+        function wrap(text, width) {
+            text.each(function() {
+                var text = d3.select(this),
+                    words = text.text().split(/\s+/).reverse(),
+                    word,
+                    line = [],
+                    lineNumber = 0,
+                    lineHeight = 1.1, // ems
+                    y = text.attr("y"),
+                    dy = parseFloat(text.attr("dy")) || 0,
+                    tspan = text.text(null).append("tspan").attr("x", -5).attr("y", y).attr("dy", dy + "em");
+                while (word = words.pop()) {
+                line.push(word);
+                tspan.text(line.join(" "));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = text.append("tspan").attr("x", -5).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                }
+                }
+            });
+        }
+        
+        drawChart();
+        window.addEventListener('resize', drawChart);
+
+    </script>
+</body>
+</html>
